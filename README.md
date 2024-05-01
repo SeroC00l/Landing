@@ -10,7 +10,8 @@ npm create astro@latest -- --template basics
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+![portfolio](https://github.com/SeroC00l/Landing/assets/99992585/06431f1a-038e-4d48-94b2-20c97a96bedd)
+
 
 ## 🚀 Project Structure
 
