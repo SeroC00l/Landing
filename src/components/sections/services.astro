@@ -8,11 +8,11 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="services" class="py-[200px]">
-  <h2 class="text-3xl w-[400px] mx-auto font-semibold text-white flex text-center">
+<section id="services" class="py-[200px] w-full relative min-w-[760px]">
+  <h2 class="text-3xl w-[400px] mx-auto font-semibold text-white flex justify-center text-center items-center">
     {t("designDevelopment")}<Code class="size-30" />
   </h2>
-  <div class="container mt-[100px] mx-auto relative grid grid-cols-8 gap-3 max-w-[960px] min-w-[760px]">
+  <div class="container mt-[100px] mx-auto relative grid grid-cols-8 gap-3 max-w-[960px] ">
     <Card data-glow class="card col-span-5 row-span-3 text-left">
       <div class="w-2/3 flex flex-col gap-6">
         <div class="flex gap-4 items-center">
