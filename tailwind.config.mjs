@@ -7,8 +7,8 @@ export default {
 				Darkblue: "#020420"
 			},
 			backgroundImage: {
-				'robot': "url('/robot.png')",
-				'convertion': "url('/convertion.png')",
+				'robot': "url('/robot.webp')",
+				'convertion': "url('/convertion.webp')",
 			  }
 		},
 	},
