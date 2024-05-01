@@ -1,61 +1,126 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
-
-const { href, title, body } = Astro.props;
+const { href } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+{
+  href ? (
+    <a {...Astro.props} data-glow>
+      <slot />
+    </a>
+  ) : (
+    <article {...Astro.props} data-glow>
+      <slot />
+    </article>
+  )
+}
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .card {
+    @apply px-6 flex relative justify-center items-center cursor-pointer text-white rounded-xl  transition-colors;
+    --border: 1.5; /* Grosor del borde */
+    --radius: 14; /* Radio de borde */
+    --size: 300; /* Tamaño del resplandor */
+    --border-light-opacity: 0.5; /* Opacidad del resplandor */
+    --base: 120; /* Color base del resplandor */
+    --spread: 300; /* Intensidad del resplandor */
+    --outer: 1; /* Opacidad del resplandor */
+    background: linear-gradient(0deg, #0f172a80, #0f172a80),
+      linear-gradient(180deg, #33415580, #02042080 33.92%);
+  }
+
+  /* Glow specific styles */
+  [data-glow] {
+    --border-size: calc(var(--border, 2) * 1px);
+    --spotlight-size: calc(var(--size, 150) * 1px);
+    --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
+    background-color: var(--backdrop, transparent);
+    background-size: calc(100% + (2 * var(--border-size)))
+      calc(100% + (2 * var(--border-size)));
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    border: var(--border-size) solid var(--backup-border);
+    position: relative;
+    touch-action: none;
+  }
+
+  [data-glow]::before,
+  [data-glow]::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: calc(var(--border-size) * -1);
+    border: var(--border-size) solid transparent;
+    border-radius: calc(var(--radius) * 1px);
+    background-attachment: fixed;
+    background-size: calc(100% + (2 * var(--border-size)))
+      calc(100% + (2 * var(--border-size)));
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    mask: linear-gradient(transparent, transparent),
+      linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+  }
+
+  /* This is the emphasis light */
+  [data-glow]::before {
+    background-image: radial-gradient(
+      calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
+        calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
+      hsl(
+        var(--hue, 210) calc(var(--saturation, 100) * 1%)
+          calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)
+      ),
+      transparent 100%
+    );
+    filter: brightness(2);
+  }
+
+  /* This is the spotlight */
+  [data-glow]::after {
+    background-image: radial-gradient(
+      calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
+        calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
+      hsl(0 100% 100% / var(--border-light-opacity, 1)),
+      transparent 100%
+    );
+  }
+
+  [data-glow] [data-glow] {
+    position: absolute;
+    inset: 0;
+    will-change: filter;
+    opacity: var(--outer, 1);
+  }
+
+  [data-glow] > [data-glow] {
+    border-radius: calc(var(--radius) * 1px);
+    border-width: calc(var(--border-size) * 20);
+    filter: blur(calc(var(--border-size) * 10));
+    background: none;
+    pointer-events: none;
+  }
+
+  [data-glow] > [data-glow]::before {
+    inset: -10px;
+    border-width: 10px;
+  }
+
+  [data-glow] [data-glow] {
+    border: none;
+  }
+
+  [data-glow] :is(a, button) {
+    border-radius: calc(var(--radius) * 1px);
+    border: var(--border-size) solid transparent;
+  }
+
+  [data-glow] :is(a, button) [data-glow] {
+    background: none;
+  }
+
+  [data-glow] :is(a, button) [data-glow]::before {
+    inset: calc(var(--border-size) * -1);
+    border-width: calc(var(--border-size) * 1);
+  }
 </style>

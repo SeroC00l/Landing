@@ -1,0 +1,38 @@
+<button class="flex gap-2 transition-all hover:text-cyan-300">
+  <span>aleurrea4@gmail.com</span>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    style="fill: currentColor; cursor: pointer;"
+  >
+    <path
+      id="copy"
+      d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"
+      fill="currentColor"></path>
+    <path
+      id="copied"
+      d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"
+      fill="currentColor"
+      class="hidden"></path>
+  </svg>
+</button>
+
+<script>
+  function handleCopy() {
+    const email = "aleurrea4@gmail.com"; // Correo electrónico
+    navigator.clipboard.writeText(email).then(() => {
+      const copy = document.querySelector("#copy");
+      const copied = document.querySelector("#copied");
+      copied.classList.remove("hidden");
+      copy.classList.add("hidden");
+      setTimeout(() => {
+        copied.classList.add("hidden");
+        copy.classList.remove("hidden");
+      }, 2000);
+    });
+  }
+
+  const button = document.querySelector("button");
+  button.addEventListener("click", handleCopy);
+</script>
