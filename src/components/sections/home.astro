@@ -12,13 +12,13 @@ import Portfolio from "@/components/svg/portfolio.astro";
 import Card from "@/components/Card.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <section
- id="home"  class="container py-[200px] mx-auto relative grid grid-cols-8 gap-3 max-w-[960px] min-w-[760px]"
+  id="home"
+  class="home py-[200px] mx-auto relative grid grid-cols-8 gap-3 max-w-[960px] min-w-[760px]"
 >
   <Card class="card col-span-3 row-span-5 flex-col gap-2">
     <div class="avatar mx-auto">
@@ -53,17 +53,19 @@ const t = useTranslations(lang);
     >
       <span
         class=`size-full flex items-center p-1  ${lang === "en" && "bg-white text-Darkblue"}`
-        ><a href="/en">EN</a>
+        ><a href="/en" class="text-xs md:text-base">EN</a>
       </span>
       <span
         class=`size-full flex items-center p-1  ${lang === "es" && "bg-white text-Darkblue"}`
       >
-        <a href="/">ES</a></span
+        <a href="/" class="text-xs md:text-base">ES</a></span
       >
     </div>
   </Card>
   <Card class="card col-span-2 row-span-2 flex-col gap-4">
-    <span class="w-full text-center text-xl font-semibold">{t("programmingContent")}</span>
+    <span class="w-full text-center text-xl font-semibold"
+      >{t("programmingContent")}</span
+    >
     <ul class="flex gap-2">
       <a
         href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
@@ -102,13 +104,11 @@ const t = useTranslations(lang);
   </Card>
 </section>
 <style>
-  .container {
+  .home {
     grid-auto-rows: minmax(100px, auto);
-    --border-light-opacity: 0.5;
   }
 
   .avatar {
     background-image: radial-gradient(farthest-corner, #ffffff40, transparent);
   }
 </style>
-

@@ -1,56 +1,45 @@
 ---
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
-const { currentLocale } = Astro
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={ description } />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-Darkblue">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-Darkblue">
+    <slot />
+  </body>
 </html>
 <style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
-	code { 
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
 </style>
 <script>
-	const syncPointer = ({ x, y }) => {
-	  document.documentElement.style.setProperty("--x", x.toFixed(2));
-	  document.documentElement.style.setProperty(
-		"--xp",
-		(x / window.innerWidth).toFixed(2)
-	  );
-	  document.documentElement.style.setProperty("--y", y.toFixed(2));
-	  document.documentElement.style.setProperty(
-		"--yp",
-		(y / window.innerHeight).toFixed(2)
-	  );
-	};
-	document.body.addEventListener("pointermove", syncPointer);
-  </script>
+  const syncPointer = ({ x, y }) => {
+    document.documentElement.style.setProperty("--x", x.toFixed(2));
+    document.documentElement.style.setProperty(
+      "--xp",
+      (x / window.innerWidth).toFixed(2)
+    );
+    document.documentElement.style.setProperty("--y", y.toFixed(2));
+    document.documentElement.style.setProperty(
+      "--yp",
+      (y / window.innerHeight).toFixed(2)
+    );
+  };
+  document.body.addEventListener("pointermove", syncPointer);
+</script>

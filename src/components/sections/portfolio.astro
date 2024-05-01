@@ -47,13 +47,13 @@ const PROJECTS = [
 ];
 ---
 
-<section id="portfolio" class="py-[200px] max-w-[960px] min-w-[760px] mx-auto">
+<section id="portfolio" class="py-[200px] max-w-[960px] mx-auto min-w-[760px]">
   <h2
     class="text-4xl w-[400px] mx-auto font-semibold text-white gap-6 flex text-center items-center justify-center"
   >
     {t("projects")}<PortfolioSVG class="size-20" />
   </h2>
-  <div class="flex flex-col gap-y-16 mt-[100px] mx-10">
+  <div class="flex flex-col gap-y-16 mt-[100px] md:mx-0 mx-10">
     {
       PROJECTS.map(({ image, title, description, tags, link, github }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
@@ -61,7 +61,7 @@ const PROJECTS = [
             <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
               <img
                 alt="Recién llegado vs 5 años en Nueva Zelanda"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                class="object-cover object-top w-full md:h-56 transition duration-500 h-full md:scale-110 md:group-hover:scale-105"
                 loading="lazy"
                 src={image}
               />
