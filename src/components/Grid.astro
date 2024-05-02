@@ -1,0 +1,9 @@
+<section {...Astro.props}>
+  <slot />
+</section>
+<style>
+  section {
+    @apply relative grid grid-cols-8 gap-3 mx-auto min-w-minApp max-w-maxApp;
+    grid-auto-rows: minmax(100px, auto);
+  }
+</style>

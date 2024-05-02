@@ -4,28 +4,28 @@ import Code from "@/components/svg/code.astro";
 import Instagram from "@/components/svg/instagram.astro";
 import Twitter from "@/components/svg/twitter.astro";
 import Github from "@/components/svg/github.astro";
-import Mail from "@/components/mail.astro";
+import Mail from "@/components/Mail.astro";
 import Youtube from "@/components/svg/youtube.astro";
 import Twitch from "@/components/svg/twitch.astro";
 import Download from "@/components/svg/download.astro";
 import Portfolio from "@/components/svg/portfolio.astro";
 import Card from "@/components/Card.astro";
+import Grid from "@/components/Grid.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section
+<Grid
   id="home"
-  class="home py-[200px] mx-auto relative grid grid-cols-8 gap-3 max-w-[960px] min-w-[760px]"
+  class="py-[200px]"
 >
   <Card class="card col-span-3 row-span-5 flex-col gap-2">
     <div class="avatar mx-auto">
       <img
         src="/avatar.webp"
         alt="imagen del Ingeniero de Sorftware Alejandro Urrea"
-        class="aspect-square rounded-xl cursor-default"
+        class="aspect-square bg-avatar rounded-xl cursor-default"
       />
     </div>
     <span class="text-lg w-full">{t("greeting")}</span>
@@ -102,13 +102,4 @@ const t = useTranslations(lang);
     <span>{t("projects")}</span>
     <Portfolio />
   </Card>
-</section>
-<style>
-  .home {
-    grid-auto-rows: minmax(100px, auto);
-  }
-
-  .avatar {
-    background-image: radial-gradient(farthest-corner, #ffffff40, transparent);
-  }
-</style>
+</Grid>
