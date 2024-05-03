@@ -126,7 +126,7 @@ const { href } = Astro.props;
 </style>
 <script>
   const syncPointer = ({ x, y }) => {
-    if (window.innerWidth > 768) { // Cambia 768 por el ancho que desees para considerar como desktop
+    if (window.innerWidth > 1200) { // Cambia 768 por el ancho que desees para considerar como desktop
       document.documentElement.style.setProperty("--x", x.toFixed(2));
       document.documentElement.style.setProperty(
         "--xp",
