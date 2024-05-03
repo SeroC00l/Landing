@@ -9,7 +9,6 @@ export default {
       backgroundImage: {
         robot: "url('/robot.webp')",
         convertion: "url('/convertion.webp')",
-        avatar: "radial-gradient(farthest-corner, #ffffff40, transparent);",
       },
       maxWidth: {
         maxApp: "960px",
