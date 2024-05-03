@@ -41,7 +41,7 @@ export const languages = {
         aboutMeText: "Soy un desarrollador de software y creador de contenido Colombiano, apasionado por aprovechar la tecnología para crear soluciones innovadoras y contenido atractivo. Con una sólida experiencia en desarrollo web, aplicaciones móviles y computación en la nube, Busco aportar una combinación de experiencia técnica y visión creativa a cada proyecto que emprendo.",
         attractiveDesign: "Diseño Atractivo",
         attractiveDesignDescription: "Diseñamos páginas web que combinan estética impactante con una interfaz de usuario excepcional. Nuestro enfoque no se limita solo a lo visual; también nos aseguramos de que cada elemento del diseño esté estratégicamente ubicado para maximizar la facilidad de uso y la interacción intuitiva.",
-        optimizedFunctionality: "Funcionaidad Optimizada",
+        optimizedFunctionality: "Funcionalidad Optimizada",
         optimizedFunctionalityDescription: "Nos aseguramos de que cada elemento de tu Landing Page funcione de manera óptima para una experiencia de usuario sin contratiempos.",
         analyticsAndContinuousImprovement: "Analítica y Mejora Continua",
         analyticsAndContinuousImprovementDescription: "Realizamos un seguimiento detallado del rendimiento de tus Landing Pages y aplicamos mejoras constantes para optimizar tus resultados.",
