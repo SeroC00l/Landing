@@ -16,38 +16,37 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Grid
-  id="home"
-  class="py-[200px]"
->
-  <Card class="card col-span-3 row-span-5 flex-col gap-2">
-    <div class="avatar mx-auto">
+<Grid id="home" class="py-[200px]">
+  <Card class="card md:col-span-3 col-span-8 p-4 row-span-5 ">
+    <div class="mx-auto flex-col gap-2">
       <img
         src="/avatar.webp"
         alt="imagen del Ingeniero de Sorftware Alejandro Urrea"
         class="aspect-square bg-avatar rounded-xl cursor-default"
       />
+
+      <span class="text-lg w-full">{t("greeting")}</span>
+      <h1 class="text-3xl font-semibold">Alejandro Urrea</h1>
+      <p class="text-sm mb-2 max-w-[500px]">{t("experience")}</p>
     </div>
-    <span class="text-lg w-full">{t("greeting")}</span>
-    <h1 class="text-3xl w-full font-semibold">Alejandro Urrea</h1>
-    <p class="text-sm w-full mb-2">{t("experience")}</p>
   </Card>
-  <Card href="#services" class="card col-span-5 row-span-2">
+  <Card href="#services" class="card col-span-5 row-span-2 p-4">
     <h2 class="text-3xl w-[300px] font-semibold">{t("designDevelopment")}</h2>
     <Code />
   </Card>
-  <Card class="card col-span-2">
+  <Card class="card col-span-3 md:col-span-2">
     <CopyMail />
   </Card>
   <Card
     href="/CV_Alejandro_Urrea.pdf"
     target="_blank"
-    class="card col-span-2 gap-4"
+    class="card col-span-3 md:col-span-2 gap-4"
   >
-    <span class="text-xl font-semibold">{t("downloadCV")}</span>
-    <Download class="size-8" />
+    <span class="text-xl font-semibold flex"
+      >{t("downloadCV")}<Download class="size-8" /></span
+    >
   </Card>
-  <Card class="card">
+  <Card class="card col-span-2 md:col-span-1 row-span-2 md:row-span-1">
     <div
       class="transition-all rounded-full size-14 flex justify-center items-center overflow-hidden font-semibold cursor-pointer"
     >
@@ -62,7 +61,7 @@ const t = useTranslations(lang);
       >
     </div>
   </Card>
-  <Card class="card col-span-2 row-span-2 flex-col gap-4">
+  <Card class="card col-span-3 md:col-span-2  row-span-2 flex-col gap-4">
     <span class="w-full text-center text-xl font-semibold"
       >{t("programmingContent")}</span
     >
@@ -78,23 +77,23 @@ const t = useTranslations(lang);
       >
     </ul>
   </Card>
-  <Card class="card col-span-3 row-span-3 flex-col gap-2">
+  <Card class="card col-span-3 row-span-3 flex-col gap-2 p-4">
     <span class="w-full text-xl font-semibold">{t("aboutMeTitle")}</span>
     <p class="text-sm text-[#ffffff90]">{t("aboutMeText")}</p>
   </Card>
   <Card class="card col-span-3">
     <ul class="flex gap-2">
       <a href="https://www.instagram.com/sero_cool/" target="_blank">
-        <Instagram class="size-14" />
+        <Instagram class="md:size-14 size-10" />
       </a>
       <a href="https://twitter.com/cool_sero51260" target="_blank">
-        <Twitter class="size-14" />
+        <Twitter class="md:size-14 size-10" />
       </a>
       <a href="https://github.com/SeroC00l" target="_blank">
-        <Github class="size-14" />
+        <Github class="md:size-14 size-10" />
       </a>
       <a href="https://www.linkedin.com/in/alejourrea/" target="_blank">
-        <Linkedin class="size-14" />
+        <Linkedin class="md:size-14 size-10" />
       </a>
     </ul>
   </Card>
