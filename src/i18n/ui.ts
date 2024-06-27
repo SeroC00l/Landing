@@ -28,7 +28,7 @@ export const languages = {
         masterFinanceTitle: "Master Finance - Multiplatform Finance Application",
         masterFinanceDesc: "Web and mobile application focused on improving users finances, developed using Next.js, Tailwind CSS, and React Native.",
         niceNailsTitle: "Nice Nails - Landing Page and Online Store",
-        niceNailsDesc: "Manicure services website, including an online store developed using Astro, Svelte, Tailwind CSS, integrated with Mercadolibre API.",
+        niceNailsDesc: "Manicure services website, including an online store developed using Astro, Svelte, Tailwind CSS, integrated with Mercadopago API.",
       },
       es: {
         greeting: "Hola mundo, soy",
@@ -52,6 +52,6 @@ export const languages = {
         masterFinanceTitle: "Master Finance - Aplicación Multiplataforma de Finanzas",
         masterFinanceDesc: "Aplicación web y móvil centrada en mejorar las finanzas de los usuarios, desarrollada utilizando Next.js, Tailwind CSS y React Native.",
         niceNailsTitle: "Nice Nails - Landing Page y tienda online",
-        niceNailsDesc: "Página web de servicios de manicura, incluyendo tienda online desarrollada usando Astro, Svelte, Tailwind CSS, integración con la API de Mercadolibre.",
+        niceNailsDesc: "Página web de servicios de manicura, incluyendo tienda online desarrollada usando Astro, Svelte, Tailwind CSS, integración con la API de Mercadopago.",
       },  
     } as const;

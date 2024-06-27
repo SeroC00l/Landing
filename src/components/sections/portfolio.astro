@@ -6,6 +6,7 @@ import Link from "@/components/svg/link.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import AstroSVG from "@/components/svg/AstroSVG.astro";
 import PortfolioSVG from "../svg/portfolio.astro";
+import Svelte from "@/components/svg/svelte.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -26,6 +27,11 @@ const TAGS = {
     class: "bg-gray-700 text-white",
     icon: AstroSVG,
   },
+  SVELTE: {
+    name: "Svelte",
+    class: "bg-[#ff3e00] text-white",
+    icon: Svelte,
+  },
 };
 const PROJECTS = [
   {
@@ -41,7 +47,7 @@ const PROJECTS = [
     link: "https://nicenails.site",
     github: "https://github.com/SeroC00l/nice-nails",
     image: "/projects/nicenails.webp",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    tags: [TAGS.ASTRO, TAGS.SVELTE, TAGS.TAILWIND],
   },
 ];
 ---
