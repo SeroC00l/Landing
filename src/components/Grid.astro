@@ -1,9 +1,15 @@
-<section {...Astro.props}>
+---
+const { class: className = "", ...props } = Astro.props;
+---
+
+<section
+  {...props}
+  class={`relative grid-cols-8 gap-3 mx-10 md:mx-0 ${className.includes("hidden") ? "hidden" : "grid"} ${className}`}
+>
   <slot />
 </section>
 <style>
   section {
-    @apply relative grid grid-cols-8 gap-3 mx-10 md:mx-0;
     grid-auto-rows: minmax(100px, auto);
   }
 </style>

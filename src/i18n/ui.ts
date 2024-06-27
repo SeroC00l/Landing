@@ -15,6 +15,7 @@ export const languages = {
         projects: "Projects",
         downloadCV: "Download CV",
         aboutMeTitle: "About Me",
+        nowMore: "... Now More",
         aboutMeText: "I have a strong background in web development, mobile applications, and cloud computing, I seek to bring a blend of technical expertise and creative vision to every project I undertake.",
         attractiveDesign: "Attractive Design",
         attractiveDesignDescription: "We design web pages that combine stunning aesthetics with exceptional user interfaces. Our focus goes beyond just the visual; we also ensure that each design element is strategically placed to maximize ease of use and intuitive interaction.",
@@ -32,6 +33,7 @@ export const languages = {
       es: {
         greeting: "Hola mundo, soy",
         aboutMe: "Sobre mí",
+        nowMore: "... Leer Mas",
         experience: "+2 años de experiencia. Ingeniero de Software y Creador de Contenido sobre Programación de Bogotá, Colombia.",
         designDevelopment: "Diseño y Desarrollo de Páginas Web",
         programmingContent: "Contenido de Programación",

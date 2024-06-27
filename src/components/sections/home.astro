@@ -4,7 +4,6 @@ import Github from "@/components/svg/github.astro";
 import CopyMail from "@/components/CopyMail.astro";
 import Youtube from "@/components/svg/youtube.astro";
 import Twitch from "@/components/svg/twitch.astro";
-import Download from "@/components/svg/download.astro";
 import Card from "@/components/Card.astro";
 import Grid from "@/components/Grid.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
@@ -13,36 +12,42 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Grid id="home" class="py-[80px]">
-  <Card class="card flex md:col-span-3 col-span-8 p-8 row-span-5 flex-col gap-2">
-      <img
-        src="/avatar.webp"
-        alt="imagen del Ingeniero de Sorftware Alejandro Urrea"
-        class="aspect-square rounded-xl cursor-default"
-      />
+<Grid id="home" class="pt-[80px] pb-3">
+  <Card
+    class="card flex md:col-span-3 col-span-8 p-8 row-span-5 flex-col gap-2"
+  >
+    <img
+      src="/avatar.webp"
+      alt="imagen del Ingeniero de Sorftware Alejandro Urrea"
+      class="aspect-square rounded-xl cursor-default"
+    />
 
-      <span class="text-lg">{t("greeting")}</span>
-      <h1 class="text-3xl font-semibold">Alejandro Urrea</h1>
-      <p class="text-sm md:text-base mb-2">{t("experience")}</p>
+    <span class="text-lg">{t("greeting")}</span>
+    <h1 class="text-3xl font-semibold">Alejandro Urrea</h1>
+    <p class="text-sm md:text-base mb-2">{t("experience")}</p>
   </Card>
-  <Card class="card col-span-8 md:hidden flex justify-center gap-10 items-center p-8">
-      <a
-        href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
-        target="_blank"
-      >
-        <Youtube class="md:size-14 size-10" /></a
-      >
-      <a href="https://www.twitch.tv/blackproject33" target="_blank">
-        <Twitch class="md:size-14 size-10" /></a
-      >
-      <a href="https://github.com/SeroC00l" target="_blank">
-        <Github class="md:size-14 size-10" />
-      </a>
-      <a href="https://www.linkedin.com/in/alejourrea/" target="_blank">
-        <Linkedin class="md:size-14 size-10" />
-      </a>
+  <Card
+    class="card col-span-8 md:hidden flex justify-center gap-10 items-center p-8"
+  >
+    <a
+      href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
+      target="_blank"
+    >
+      <Youtube class="md:size-14 size-10" /></a
+    >
+    <a href="https://www.twitch.tv/blackproject33" target="_blank">
+      <Twitch class="md:size-14 size-10" /></a
+    >
+    <a href="https://github.com/SeroC00l" target="_blank">
+      <Github class="md:size-14 size-10" />
+    </a>
+    <a href="https://www.linkedin.com/in/alejourrea/" target="_blank">
+      <Linkedin class="md:size-14 size-10" />
+    </a>
   </Card>
-  <Card class="card col-span-5 md:col-span-3 row-span-3 flex justify-center flex-col gap-4 p-8">
+  <Card
+    class="card col-span-5 md:col-span-3 row-span-3 flex justify-center flex-col gap-4 p-8"
+  >
     <span class="w-full text-xl font-semibold">{t("aboutMeTitle")}</span>
     <p class="text-sm md:text-base text-gray-400">{t("aboutMeText")}</p>
   </Card>
@@ -54,11 +59,11 @@ const t = useTranslations(lang);
     target="_blank"
     class="card col-span-3 md:col-span-2 gap-4 flex justify-center items-center"
   >
-    <span class="text-xl font-semibold flex"
-      >{t("downloadCV")}</span
-    >
+    <span class="text-xl font-semibold flex">{t("downloadCV")}</span>
   </Card>
-  <Card class="card md:col-span-2 col-span-3 row-span-1 flex justify-center items-center">
+  <Card
+    class="card md:col-span-2 col-span-3 row-span-1 flex justify-center items-center"
+  >
     <div
       class="transition-all rounded-full size-14 flex justify-center items-center overflow-hidden font-semibold cursor-pointer"
     >
@@ -73,7 +78,9 @@ const t = useTranslations(lang);
       >
     </div>
   </Card>
-  <Card class="card md:col-span-5 col-span-8 row-span-3 text-left flex justify-center items-center px-8">
+  <Card
+    class="card md:col-span-5 col-span-8 row-span-3 text-left flex justify-center items-center px-8"
+  >
     <div class="w-2/3 flex flex-col gap-6">
       <div class="flex gap-4 items-center">
         <h3 class="text-2xl font-semibold">{t("attractiveDesign")}</h3>
@@ -85,7 +92,8 @@ const t = useTranslations(lang);
     </div>
     <div class="w-1/3 bg-robot h-full bg-cover"></div>
   </Card>
-  <Card class="card hidden md:flex justify-center items-center col-span-3 ">
+
+  <Card class="card hidden md:flex justify-center items-center col-span-3">
     <ul class="flex gap-2">
       <a
         href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
@@ -104,13 +112,22 @@ const t = useTranslations(lang);
       </a>
     </ul>
   </Card>
-  <Card class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8">
+</Grid>
+<button class="rounded-md mx-auto w-full my-4" id="toggleCardsBtn"
+  >{t("nowMore")}</button
+>
+<Grid id="additionalGrid" class="hidden transition-transform duration-2000">
+  <Card
+    class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
+  >
     <h3 class="text-2xl font-semibold">{t("optimizedFunctionality")}</h3>
     <p class="text-sm md:text-base text-gray-400">
       {t("optimizedFunctionalityDescription")}
     </p>
   </Card>
-  <Card class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8">
+  <Card
+    class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
+  >
     <h3 class="text-2xl font-semibold">
       {t("analyticsAndContinuousImprovement")}
     </h3>
@@ -118,7 +135,9 @@ const t = useTranslations(lang);
       {t("analyticsAndContinuousImprovementDescription")}
     </p>
   </Card>
-  <Card class="card col-span-8 row-span-3 text-left flex justify-center items-center px-8">
+  <Card
+    class="card col-span-8 row-span-3 text-left flex justify-center items-center px-8"
+  >
     <div class="w-2/3 gap-6 flex flex-col">
       <h3 class="text-2xl font-semibold">{t("effectiveConversion")}</h3>
       <p class="text-sm md:text-base text-gray-400">
@@ -128,3 +147,21 @@ const t = useTranslations(lang);
     <div class="w-1/3 bg-convertion h-[100px] bg-contain bg-no-repeat"></div>
   </Card>
 </Grid>
+
+<script>
+  document
+    .getElementById("toggleCardsBtn")
+    .addEventListener("click", function () {
+      const additionalGrid = document.getElementById("additionalGrid");
+      const toggleButton = document.getElementById("toggleCardsBtn");
+      if (additionalGrid.classList.contains("hidden")) {
+        additionalGrid.classList.remove("hidden");
+        additionalGrid.classList.add("grid");
+        toggleButton.classList.add("hidden");
+      } else {
+        additionalGrid.classList.add("hidden");
+        additionalGrid.classList.remove("grid");
+        toggleButton.classList.remove("hidden");
+      }
+    });
+</script>
