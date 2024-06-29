@@ -51,16 +51,6 @@ const t = useTranslations(lang);
     <span class="w-full text-xl font-semibold">{t("aboutMeTitle")}</span>
     <p class="text-gray-400">{t("aboutMeText")}</p>
   </Card>
-  <Card class="card col-span-3 md:col-span-2 flex justify-center items-center">
-    <CopyMail />
-  </Card>
-  <Card
-    href="/CV_Alejandro_Urrea.pdf"
-    target="_blank"
-    class="card col-span-3 md:col-span-2 gap-4 flex justify-center items-center"
-  >
-    <span class="text-xl font-semibold flex">{t("downloadCV")}</span>
-  </Card>
   <Card
     class="card md:col-span-2 col-span-3 row-span-1 flex justify-center items-center"
   >
@@ -78,6 +68,18 @@ const t = useTranslations(lang);
       >
     </div>
   </Card>
+  <Card class="card col-span-3 md:col-span-2 flex justify-center items-center">
+    <CopyMail />
+  </Card>
+
+  <Card
+    href="/CV_Alejandro_Urrea.pdf"
+    target="_blank"
+    class="card col-span-3 md:col-span-2 gap-4 flex justify-center items-center"
+  >
+    <span class="text-xl font-semibold flex">{t("downloadCV")}</span>
+  </Card>
+
   <Card
     class="card md:col-span-5 col-span-8 row-span-3 text-left flex justify-center items-center px-8"
   >

@@ -7,6 +7,7 @@ import LinkButton from "@/components/LinkButton.astro";
 import AstroSVG from "@/components/svg/AstroSVG.astro";
 import PortfolioSVG from "../svg/portfolio.astro";
 import Svelte from "@/components/svg/svelte.astro";
+import Supabase from "@/components/svg/Supabase.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -32,6 +33,11 @@ const TAGS = {
     class: "bg-[#ff3e00] text-white",
     icon: Svelte,
   },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-black text-white",
+    icon: Supabase,
+  },
 };
 const PROJECTS = [
   {
@@ -48,6 +54,14 @@ const PROJECTS = [
     github: "https://github.com/SeroC00l/nice-nails",
     image: "/projects/nicenails.webp",
     tags: [TAGS.ASTRO, TAGS.SVELTE, TAGS.TAILWIND],
+  },
+  {
+    title: t("projectManagerTitle"),
+    description: t("projectManagerDesc"),
+    link: "project-manager-flame.vercel.app/",
+    github: "https://github.com/SeroC00l/ProjectManager",
+    image: "/projects/project_manager.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
   },
 ];
 ---
