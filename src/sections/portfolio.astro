@@ -5,7 +5,7 @@ import Tailwind from "@/components/svg/tailwind.astro";
 import Link from "@/components/svg/link.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import AstroSVG from "@/components/svg/AstroSVG.astro";
-import PortfolioSVG from "../svg/portfolio.astro";
+import PortfolioSVG from "@/components/svg/portfolio.astro";
 import Svelte from "@/components/svg/svelte.astro";
 import Supabase from "@/components/svg/Supabase.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
@@ -58,7 +58,7 @@ const PROJECTS = [
   {
     title: t("projectManagerTitle"),
     description: t("projectManagerDesc"),
-    link: "project-manager-flame.vercel.app/",
+    link: "https://project-manager-flame.vercel.app/",
     github: "https://github.com/SeroC00l/ProjectManager",
     image: "/projects/project_manager.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
@@ -72,8 +72,7 @@ const PROJECTS = [
   >
     {t("projects")}<PortfolioSVG class="size-20" />
   </h2>
-  <div class="flex flex-col gap-y-16 mt-[100px] md:mx-0 mx-10">
-    {
+  <div class="flex flex-col gap-y-16 mt-[100px] md:mx-0 mx-10">{
       PROJECTS.map(({ image, title, description, tags, link, github }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2">
