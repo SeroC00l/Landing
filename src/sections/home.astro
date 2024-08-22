@@ -11,7 +11,6 @@ import Brush from "@/components/svg/brush.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-
 <Grid id="home" class="pt-[80px] pb-3">
   <Card
     class="card flex md:col-span-3 col-span-8 p-8 row-span-5 flex-col gap-2"
@@ -23,7 +22,7 @@ const t = useTranslations(lang);
     />
 
     <span class="text-lg">{t("greeting")}</span>
-    <h1 class="text-3xl font-semibold">Alejandro Urrea</h1>
+    <h1 class="text-3xl font-semibold text-purple-300">Alejandro Urrea</h1>
     <p class="mb-2">{t("experience")}</p>
   </Card>
   <Card
@@ -33,38 +32,38 @@ const t = useTranslations(lang);
       href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
       target="_blank"
     >
-      <Youtube class="md:size-14 size-10" /></a
+      <Youtube class="md:size-14 size-10 text-white hover:text-purple-300" /></a
     >
-    <a href="https://www.twitch.tv/blackproject33" target="_blank">
-      <Twitch class="md:size-14 size-10" /></a
+    <a href="https://www.twitch.tv/blackproject33" target="_blank" class="text-white hover:text-purple-300">
+      <Twitch class="md:size-14 size-10 text-white hover:text-purple-300" /></a
     >
     <a href="https://github.com/SeroC00l" target="_blank">
-      <Github class="md:size-14 size-10" />
+      <Github class="md:size-14 size-10 text-white hover:text-purple-300" />
     </a>
     <a href="https://www.linkedin.com/in/alejourrea/" target="_blank">
-      <Linkedin class="md:size-14 size-10" />
+      <Linkedin class="md:size-14 size-10 text-white hover:text-purple-300" />
     </a>
   </Card>
   <Card
     class="card col-span-5 md:col-span-3 row-span-3 flex justify-center flex-col gap-4 p-8"
   >
-    <span class="w-full text-xl font-semibold">{t("aboutMeTitle")}</span>
+    <span class="w-full text-xl font-semibold text-purple-300">{t("aboutMeTitle")}</span>
     <p class="text-gray-400">{t("aboutMeText")}</p>
   </Card>
   <Card
     class="card md:col-span-2 col-span-3 row-span-1 flex justify-center items-center"
   >
     <div
-      class="transition-all rounded-full size-14 flex justify-center items-center overflow-hidden font-semibold cursor-pointer"
+      class="transition-all rounded-full group size-14 border-2 border-white hover:border-purple-300 flex justify-center items-center overflow-hidden font-semibold cursor-pointer"
     >
       <span
-        class=`size-full flex items-center p-1  ${lang === "en" && "bg-white text-Darkblue"}`
-        ><a href="/en" class="text-xs md:text-base">EN</a>
+        class=`size-full flex items-center p-1  ${lang === "es" && "bg-white hover:bg-purple-300 text-Darkblue "}`
+        ><a href="/en" class="text-xs md:text-base font-semibold">EN</a>
       </span>
       <span
-        class=`size-full flex items-center p-1  ${lang === "es" && "bg-white text-Darkblue"}`
+        class=`size-full flex items-center p-1 ${lang === "en" && "bg-white hover:bg-purple-300 text-Darkblue "}`
       >
-        <a href="/" class="text-xs md:text-base">ES</a></span
+        <a href="/" class="text-xs md:text-base font-semibold">ES</a></span
       >
     </div>
   </Card>
@@ -77,7 +76,7 @@ const t = useTranslations(lang);
     target="_blank"
     class="card col-span-3 md:col-span-2 gap-4 flex justify-center items-center"
   >
-    <span class="text-xl font-semibold flex">{t("downloadCV")}</span>
+    <span class="text-xl font-semibold flex hover:text-purple-300 transition-all">{t("downloadCV")}</span>
   </Card>
 
   <Card
@@ -85,7 +84,7 @@ const t = useTranslations(lang);
   >
     <div class="w-2/3 flex flex-col gap-6">
       <div class="flex gap-4 items-center">
-        <h3 class="text-2xl font-semibold">{t("attractiveDesign")}</h3>
+        <h3 class="text-2xl font-semibold text-purple-300">{t("attractiveDesign")}</h3>
         <Brush class="size-8" />
       </div>
       <p class="max-w-[400px] text-gray-400">
@@ -115,14 +114,14 @@ const t = useTranslations(lang);
     </ul>
   </Card>
 </Grid>
-<button class="rounded-md mx-auto w-full my-4" id="toggleCardsBtn"
+<button class="rounded-md mx-auto w-full my-4 hover:text-purple-300" id="toggleCardsBtn"
   >{t("nowMore")}</button
 >
 <Grid id="additionalGrid" class="hidden transition-transform duration-2000">
   <Card
     class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
   >
-    <h3 class="text-2xl font-semibold">{t("optimizedFunctionality")}</h3>
+    <h3 class="text-2xl font-semibold text-purple-300 text-start w-full">{t("optimizedFunctionality")}</h3>
     <p class="text-gray-400">
       {t("optimizedFunctionalityDescription")}
     </p>
@@ -130,7 +129,7 @@ const t = useTranslations(lang);
   <Card
     class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
   >
-    <h3 class="text-2xl font-semibold">
+    <h3 class="text-2xl font-semibold text-purple-300 text-start w-full">
       {t("analyticsAndContinuousImprovement")}
     </h3>
     <p class="text-gray-400">
@@ -141,7 +140,7 @@ const t = useTranslations(lang);
     class="card col-span-8 row-span-3 text-left flex justify-center items-center px-8"
   >
     <div class="w-2/3 gap-6 flex flex-col">
-      <h3 class="text-2xl font-semibold">{t("effectiveConversion")}</h3>
+      <h3 class="text-2xl font-semibold text-purple-300 ">{t("effectiveConversion")}</h3>
       <p class="text-gray-400">
         {t("effectiveConversionDescription")}
       </p>
@@ -157,7 +156,7 @@ const t = useTranslations(lang);
     if (additionalGrid.classList.contains("hidden")) {
       additionalGrid.classList.remove("hidden");
       additionalGrid.classList.add("grid");
-      toggleButton.classList.add("hidden");
+      toggleButton.before(additionalGrid);
     } else {
       additionalGrid.classList.add("hidden");
       additionalGrid.classList.remove("grid");
