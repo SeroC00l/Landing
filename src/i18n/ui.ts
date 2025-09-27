@@ -10,7 +10,7 @@ export const ui = {
     greeting: "Hello world, I'm",
     aboutMe: "About Me",
     experience:
-      "+2 years of experience. Software Engineer and Content Creator on Programming from Bogotá, Colombia.",
+      "+4 años de experiencia. Ingeniero Fullstack enfocado en integraciones con inteligencia artificial y Creador de Contenido sobre Programación, Fitness y Cripto desde Colombia",
     designDevelopment: "Web Design and Development",
     programmingContent: "Programming Content",
     projects: "Projects",
