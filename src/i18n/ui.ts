@@ -18,7 +18,7 @@ export const ui = {
     aboutMeTitle: "About Me",
     nowMore: "... Now More",
     aboutMeText:
-      "I have a strong background in web development, mobile applications, and cloud computing, I seek to bring a blend of technical expertise and creative vision to every project I undertake.",
+      "I started exploring computers when I was 11, and by 15 I was already programming my first applications. Over the years, I’ve worked on web development, mobile apps, and cloud projects, always combining solid technical skills with a practical and creative mindset. I enjoy building things that truly work and create value—not just writing code for the sake of it.",
     attractiveDesign: "Attractive Design",
     attractiveDesignDescription:
       "We design web pages that combine stunning aesthetics with exceptional user interfaces. Our focus goes beyond just the visual; we also ensure that each design element is strategically placed to maximize ease of use and intuitive interaction.",
@@ -53,7 +53,7 @@ export const ui = {
     downloadCV: "Descargar CV",
     aboutMeTitle: "Sobre mí",
     aboutMeText:
-      "Cuento con una sólida experiencia en desarrollo web, aplicaciones móviles y computación en la nube, Busco aportar una combinación de experiencia técnica y visión creativa a cada proyecto que emprendo.",
+      "Desde los 11 años empecé a explorar el mundo de los computadores y a los 15 ya estaba programando mis primeras aplicaciones. Con los años he trabajado en desarrollo web, aplicaciones móviles y proyectos en la nube, siempre combinando la parte técnica con una visión práctica y creativa. Me gusta construir cosas que realmente funcionen y generen valor, no solo código por escribir.",
     attractiveDesign: "Diseño Atractivo",
     attractiveDesignDescription:
       "Diseñamos páginas web que combinan estética impactante con una interfaz de usuario excepcional. Nuestro enfoque no se limita solo a lo visual; también nos aseguramos de que cada elemento del diseño esté estratégicamente ubicado para maximizar la facilidad de uso y la interacción intuitiva.",
