@@ -25,19 +25,19 @@ export const ui = {
     showMore: "Show More",
     showLess: "Show Less",
     aboutMeText:
-      "I have a strong background in web development, mobile applications, and cloud computing, I seek to bring a blend of technical expertise and creative vision to every project I undertake.",
+      "I've been passionate about technology since age 11, writing my first programs at 15. Over the years I've worked across web development, mobile applications, and cloud infrastructure — always blending technical expertise with a practical, creative mindset. I build things that work and create real value, not just code for the sake of it.",
     attractiveDesign: "Attractive Design",
     attractiveDesignDescription:
-      "I design web pages that combine stunning aesthetics with exceptional user interfaces. My focus goes beyond just the visual; I also ensure that each design element is strategically placed to maximize ease of use and intuitive interaction.",
+      "We design websites that combine stunning aesthetics with exceptional user interfaces. Our approach goes beyond visuals — every design element is strategically placed to maximize usability and intuitive interaction.",
     optimizedFunctionality: "Optimized Functionality",
     optimizedFunctionalityDescription:
-      "Every element of your Landing Page is engineered to load in milliseconds and flow without friction. A flawless user experience on any device.",
+      "We ensure every element of your Landing Page performs optimally for a seamless user experience across all devices.",
     analyticsAndContinuousImprovement: "Analytics and Continuous Improvement",
     analyticsAndContinuousImprovementDescription:
-      "I measure what matters: conversions, user behavior, and sales funnels. I iterate with real data to maximize your ROI.",
+      "We track detailed performance metrics on your Landing Pages and apply continuous improvements to optimize your results.",
     effectiveConversion: "Effective Conversion",
     effectiveConversionDescription:
-      "Conversion strategies grounded in user psychology and behavioral data. Every element — from copy to call-to-action — is optimized to turn visitors into customers.",
+      "We apply effective, personalized conversion strategies designed to motivate and inspire your visitors to take action. Whether it's completing a form, making a purchase, or subscribing to your newsletter, our strategies are built to significantly boost your conversion rates.",
     masterFinanceTitle: "Master Finance - Multiplatform Finance Application",
     masterFinanceDesc:
       "Web and mobile application focused on improving users finances, developed using Next.js, Tailwind CSS, and React Native.",
@@ -103,19 +103,19 @@ export const ui = {
     downloadCV: "Descargar CV",
     aboutMeTitle: "Sobre mí",
     aboutMeText:
-      "Cuento con una sólida experiencia en desarrollo web, aplicaciones móviles y computación en la nube, Busco aportar una combinación de experiencia técnica y visión creativa a cada proyecto que emprendo.",
+      "Desde los 11 años empecé a explorar el mundo de los computadores y a los 15 ya estaba programando mis primeras aplicaciones. Con los años he trabajado en desarrollo web, aplicaciones móviles y proyectos en la nube, siempre combinando la parte técnica con una visión práctica y creativa. Me gusta construir cosas que realmente funcionen y generen valor, no solo código por escribir.",
     attractiveDesign: "Diseño Atractivo",
     attractiveDesignDescription:
-      "Diseño páginas web que combinan estética impactante con una interfaz de usuario excepcional. Mi enfoque no se limita solo a lo visual; también me aseguro de que cada elemento del diseño esté estratégicamente ubicado para maximizar la facilidad de uso y la interacción intuitiva.",
+      "Diseñamos páginas web que combinan estética impactante con una interfaz de usuario excepcional. Nuestro enfoque no se limita solo a lo visual; también nos aseguramos de que cada elemento del diseño esté estratégicamente ubicado para maximizar la facilidad de uso y la interacción intuitiva.",
     optimizedFunctionality: "Funcionalidad Optimizada",
     optimizedFunctionalityDescription:
-      "Cada elemento de tu Landing Page está diseñado para cargar en milisegundos y fluir sin fricción. Experiencia de usuario impecable en cualquier dispositivo.",
+      "Nos aseguramos de que cada elemento de tu Landing Page funcione de manera óptima para una experiencia de usuario sin contratiempos.",
     analyticsAndContinuousImprovement: "Analítica y Mejora Continua",
     analyticsAndContinuousImprovementDescription:
-      "Mido cada métrica que importa: conversiones, comportamiento de usuarios y embudos de venta. Itero con datos reales para maximizar tu retorno de inversión.",
+      "Realizamos un seguimiento detallado del rendimiento de tus Landing Pages y aplicamos mejoras constantes para optimizar tus resultados.",
     effectiveConversion: "Conversión Efectiva",
     effectiveConversionDescription:
-      "Estrategias de conversión basadas en psicología del usuario y datos de comportamiento. Cada elemento — desde el copy hasta el llamado a la acción — está optimizado para convertir visitantes en clientes.",
+      "Aplicamos estrategias de conversión efectivas y personalizadas que están diseñadas para motivar e inspirar a tus visitantes a tomar la acción deseada en tu sitio web. Ya sea que se trate de completar un formulario, realizar una compra o suscribirse a tu boletín, nuestras estrategias están diseñadas para aumentar de manera significativa tus tasas de conversión.",
     masterFinanceTitle:
       "Master Finance - Aplicación Multiplataforma de Finanzas",
     masterFinanceDesc:
