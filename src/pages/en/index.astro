@@ -1,8 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Home from "@//sections/home.astro";
-import Portfolio from "@//sections/portfolio.astro";
-import Card from "@/components/Card.astro";
+import Home from "@/sections/home.astro";
+import Experience from "@/sections/experience.astro";
+import Portfolio from "@/sections/portfolio.astro";
 ---
 
 <Layout
@@ -10,10 +10,9 @@ import Card from "@/components/Card.astro";
   description="Desing and Development of Langing pages for your online business"
 >
   <Home />
+  <Experience />
   <Portfolio />
-  <footer class="w-full items-center gap-6 py-[50px] text-[#ffffff90] flex justify-center">
-    <p>© 2024 Alejandro Urrea. Almost All Rights Reserved.</p>
-    <Card href="#home" class="card p-3">Home</Card>
+  <footer id="contact" class="w-full items-center gap-6 py-[50px] flex justify-center">
+    <p>© 2025 Alejandro Urrea. All Rights Reserved.</p>
   </footer>
-  
 </Layout>

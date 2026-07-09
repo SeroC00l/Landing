@@ -8,6 +8,7 @@ import AstroSVG from "@/components/svg/AstroSVG.astro";
 import PortfolioSVG from "@/components/svg/portfolio.astro";
 import Svelte from "@/components/svg/svelte.astro";
 import Supabase from "@/components/svg/Supabase.astro";
+import ThreeJS from "@/components/svg/threejs.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -38,14 +39,36 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Supabase,
   },
+  THREE: {
+    name: "Three.js",
+    class: "bg-black text-white",
+    icon: ThreeJS,
+  },
 };
 const PROJECTS = [
   {
-    title: t("masterFinanceTitle"),
-    description: t("masterFinanceDesc"),
-    github: "https://github.com/SeroC00l/master-finance",
-    image: "/projects/master_finance.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    title: t("superMegaFitnessTitle"),
+    description: t("superMegaFitnessDesc"),
+    link: "https://supermegafitness.store",
+    github: "https://github.com/SeroC00l/supermegafitness",
+    image: "/projects/supermegafitness.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.SUPABASE],
+  },
+  {
+    title: t("sweetNiisTitle"),
+    description: t("sweetNiisDesc"),
+    link: "https://seroc00l.github.io/sweet-niis/",
+    github: "https://github.com/SeroC00l/sweet-niis",
+    image: "/projects/sweet-niis.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.THREE],
+  },
+  {
+    title: t("projectManagerTitle"),
+    description: t("projectManagerDesc"),
+    link: "https://project-manager-flame.vercel.app/",
+    github: "https://github.com/SeroC00l/ProjectManager",
+    image: "/projects/project_manager.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
   },
   {
     title: t("niceNailsTitle"),
@@ -56,19 +79,18 @@ const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.SVELTE, TAGS.TAILWIND],
   },
   {
-    title: t("projectManagerTitle"),
-    description: t("projectManagerDesc"),
-    link: "https://project-manager-flame.vercel.app/",
-    github: "https://github.com/SeroC00l/ProjectManager",
-    image: "/projects/project_manager.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
+    title: t("masterFinanceTitle"),
+    description: t("masterFinanceDesc"),
+    github: "https://github.com/SeroC00l/master-finance",
+    image: "/projects/master_finance.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
 ];
 ---
 
-<section id="portfolio" class="py-[200px] max-w-[960px] mx-auto min-w-[760px]">
+<section id="portfolio" class="py-[200px] max-w-[960px] mx-auto min-w-[760px]" style="content-visibility:auto; contain-intrinsic-size:700px">
   <h2
-    class="text-4xl w-[400px] mx-auto font-semibold text-white gap-6 flex text-center items-center justify-center"
+    class="text-4xl w-[400px] mx-auto font-semibold text-purple gap-6 flex text-center items-center justify-center"
   >
     {t("projects")}<PortfolioSVG class="size-20" />
   </h2>
@@ -76,7 +98,7 @@ const PROJECTS = [
       PROJECTS.map(({ image, title, description, tags, link, github }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2">
-            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-200 dark:lg:border-gray-800 lg:hover:border-gray-400 dark:lg:hover:border-gray-700 lg:hover:bg-gray-100/50 dark:lg:hover:bg-gray-800/50">
               <img
                 alt="Recién llegado vs 5 años en Nueva Zelanda"
                 class="object-cover object-top w-full md:h-56 transition duration-500 h-full md:scale-110 md:group-hover:scale-105"

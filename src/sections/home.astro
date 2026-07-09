@@ -22,7 +22,8 @@ const t = useTranslations(lang);
     />
 
     <span class="text-lg">{t("greeting")}</span>
-    <h1 class="text-3xl font-semibold text-purple-300">Alejandro Urrea</h1>
+    <h1 class="text-3xl font-semibold text-purple">Alejandro Urrea</h1>
+    <span class="text-xl font-medium text-gray-800 dark:text-white/80 -mt-1">{t("role")}</span>
     <p class="mb-2">{t("experience")}</p>
   </Card>
   <Card
@@ -32,40 +33,43 @@ const t = useTranslations(lang);
       href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
       target="_blank"
     >
-      <Youtube class="md:size-14 size-10 text-white hover:text-purple-300" /></a
+      <Youtube class="md:size-14 size-10 text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300" /></a
     >
-    <a href="https://www.twitch.tv/blackproject33" target="_blank" class="text-white hover:text-purple-300">
-      <Twitch class="md:size-14 size-10 text-white hover:text-purple-300" /></a
+    <a href="https://www.twitch.tv/blackproject33" target="_blank" class="text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300">
+      <Twitch class="md:size-14 size-10" /></a
     >
     <a href="https://github.com/SeroC00l" target="_blank">
-      <Github class="md:size-14 size-10 text-white hover:text-purple-300" />
+      <Github class="md:size-14 size-10 text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300" />
     </a>
     <a href="https://www.linkedin.com/in/alejourrea/" target="_blank">
-      <Linkedin class="md:size-14 size-10 text-white hover:text-purple-300" />
+      <Linkedin class="md:size-14 size-10 text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300" />
     </a>
   </Card>
   <Card
     class="card col-span-5 md:col-span-3 row-span-3 flex justify-center flex-col gap-4 p-8"
   >
-    <span class="w-full text-xl font-semibold text-purple-300">{t("aboutMeTitle")}</span>
-    <p class="text-gray-400">{t("aboutMeText")}</p>
+    <span class="w-full text-xl font-semibold text-purple">{t("aboutMeTitle")}</span>
+    <p class="text-gray-600 dark:text-gray-400">{t("aboutMeText")}</p>
   </Card>
   <Card
     class="card md:col-span-2 col-span-3 row-span-1 flex justify-center items-center"
   >
-    <div
-      class="transition-all rounded-full group size-14 border-2 border-white hover:border-purple-300 flex justify-center items-center overflow-hidden font-semibold cursor-pointer"
+    <button
+      id="darkmode-toggle"
+      class="transition-all rounded-full size-14 border-2 border-gray-400 dark:border-white hover:border-purple-600 dark:hover:border-purple-300 flex justify-center items-center cursor-pointer bg-transparent"
+      aria-label="Toggle dark mode"
     >
-      <span
-        class=`size-full flex items-center p-1  ${lang === "es" && "bg-white hover:bg-purple-300 text-Darkblue "}`
-        ><a href="/en" class="text-xs md:text-base font-semibold">EN</a>
-      </span>
-      <span
-        class=`size-full flex items-center p-1 ${lang === "en" && "bg-white hover:bg-purple-300 text-Darkblue "}`
-      >
-        <a href="/" class="text-xs md:text-base font-semibold">ES</a></span
-      >
-    </div>
+      <svg id="sun-icon" class="hidden size-7 text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg id="moon-icon" class="size-7 text-purple-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
   </Card>
   <Card class="card col-span-3 md:col-span-2 flex justify-center items-center">
     <CopyMail />
@@ -76,7 +80,7 @@ const t = useTranslations(lang);
     target="_blank"
     class="card col-span-3 md:col-span-2 gap-4 flex justify-center items-center"
   >
-    <span class="text-xl font-semibold flex hover:text-purple-300 transition-all">{t("downloadCV")}</span>
+    <span class="text-xl font-semibold flex hover:text-purple-600 dark:hover:text-purple-300 transition-all">{t("downloadCV")}</span>
   </Card>
 
   <Card
@@ -84,10 +88,10 @@ const t = useTranslations(lang);
   >
     <div class="w-2/3 flex flex-col gap-6">
       <div class="flex gap-4 items-center">
-        <h3 class="text-2xl font-semibold text-purple-300">{t("attractiveDesign")}</h3>
-        <Brush class="size-8" />
+        <h3 class="text-2xl font-semibold text-purple">{t("attractiveDesign")}</h3>
+        <Brush class="size-8 text-purple" />
       </div>
-      <p class="max-w-[400px] text-gray-400">
+      <p class="max-w-[400px] text-gray-600 dark:text-gray-400">
         {t("attractiveDesignDescription")}
       </p>
     </div>
@@ -99,68 +103,78 @@ const t = useTranslations(lang);
       <a
         href="https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug"
         target="_blank"
-      >
+        class="text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300">
         <Youtube class="md:size-14 size-10" /></a
       >
-      <a href="https://www.twitch.tv/blackproject33" target="_blank">
+      <a href="https://www.twitch.tv/blackproject33" target="_blank" class="text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300">
         <Twitch class="md:size-14 size-10" /></a
       >
-      <a href="https://github.com/SeroC00l" target="_blank">
+      <a href="https://github.com/SeroC00l" target="_blank" class="text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300">
         <Github class="md:size-14 size-10" />
       </a>
-      <a href="https://www.linkedin.com/in/alejourrea/" target="_blank">
+      <a href="https://www.linkedin.com/in/alejourrea/" target="_blank" class="text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300">
         <Linkedin class="md:size-14 size-10" />
       </a>
     </ul>
   </Card>
 </Grid>
-<button class="rounded-md mx-auto w-full my-4 hover:text-purple-300" id="toggleCardsBtn"
-  >{t("nowMore")}</button
+<div id="gridWrapper" class="overflow-hidden transition-all duration-500 ease-out" style="display: grid; grid-template-rows: 0fr; content-visibility:auto; contain-intrinsic-size:400px;">
+  <div class="overflow-hidden">
+    <Grid id="additionalGrid" class="transition-all duration-500 ease-out opacity-0 translate-y-4">
+      <Card
+        class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
+      >
+        <h3 class="text-2xl font-semibold text-purple text-start w-full">{t("optimizedFunctionality")}</h3>
+        <p class="max-w-[400px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          {t("optimizedFunctionalityDescription")}
+        </p>
+      </Card>
+      <Card
+        class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
+      >
+        <h3 class="text-2xl font-semibold text-purple text-start w-full">
+          {t("analyticsAndContinuousImprovement")}
+        </h3>
+        <p class="max-w-[400px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          {t("analyticsAndContinuousImprovementDescription")}
+        </p>
+      </Card>
+      <Card
+        class="card col-span-8 row-span-3 text-left flex justify-center items-center px-8"
+      >
+        <div class="w-2/3 gap-6 flex flex-col">
+          <h3 class="text-2xl font-semibold text-purple">{t("effectiveConversion")}</h3>
+          <p class="max-w-[400px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            {t("effectiveConversionDescription")}
+          </p>
+        </div>
+        <div class="w-1/3 bg-convertion h-[100px] bg-contain bg-no-repeat bg-center rounded-lg bg-gray-900/60"></div>
+      </Card>
+    </Grid>
+  </div>
+</div>
+<button
+  class="rounded-md mx-auto w-full my-4 text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300" id="toggleCardsBtn"
+  data-show-more={t("showMore")}
+  data-show-less={t("showLess")}
+  >{t("showMore")}</button
 >
-<Grid id="additionalGrid" class="hidden transition-transform duration-2000">
-  <Card
-    class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
-  >
-    <h3 class="text-2xl font-semibold text-purple-300 text-start w-full">{t("optimizedFunctionality")}</h3>
-    <p class="text-gray-400">
-      {t("optimizedFunctionalityDescription")}
-    </p>
-  </Card>
-  <Card
-    class="card col-span-4 row-span-3 flex-col gap-6 flex justify-center items-center px-8"
-  >
-    <h3 class="text-2xl font-semibold text-purple-300 text-start w-full">
-      {t("analyticsAndContinuousImprovement")}
-    </h3>
-    <p class="text-gray-400">
-      {t("analyticsAndContinuousImprovementDescription")}
-    </p>
-  </Card>
-  <Card
-    class="card col-span-8 row-span-3 text-left flex justify-center items-center px-8"
-  >
-    <div class="w-2/3 gap-6 flex flex-col">
-      <h3 class="text-2xl font-semibold text-purple-300 ">{t("effectiveConversion")}</h3>
-      <p class="text-gray-400">
-        {t("effectiveConversionDescription")}
-      </p>
-    </div>
-    <div class="w-1/3 bg-convertion h-[100px] bg-contain bg-no-repeat"></div>
-  </Card>
-</Grid>
 
 <script>
   document.getElementById("toggleCardsBtn").addEventListener("click", () => {
-    const additionalGrid = document.getElementById("additionalGrid");
+    const wrapper = document.getElementById("gridWrapper");
+    const grid = document.getElementById("additionalGrid");
     const toggleButton = document.getElementById("toggleCardsBtn");
-    if (additionalGrid.classList.contains("hidden")) {
-      additionalGrid.classList.remove("hidden");
-      additionalGrid.classList.add("grid");
-      toggleButton.before(additionalGrid);
+    const showMore = toggleButton.dataset.showMore;
+    const showLess = toggleButton.dataset.showLess;
+    if (grid.classList.contains("opacity-0")) {
+      wrapper.style.gridTemplateRows = "1fr";
+      grid.classList.remove("opacity-0", "translate-y-4");
+      toggleButton.textContent = showLess;
     } else {
-      additionalGrid.classList.add("hidden");
-      additionalGrid.classList.remove("grid");
-      toggleButton.classList.remove("hidden");
+      wrapper.style.gridTemplateRows = "0fr";
+      grid.classList.add("opacity-0", "translate-y-4");
+      toggleButton.textContent = showMore;
     }
   });
 </script>

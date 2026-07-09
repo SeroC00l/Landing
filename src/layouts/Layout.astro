@@ -1,4 +1,6 @@
 ---
+import Nav from "@/components/Nav.astro";
+import "@/app.css";
 interface Props {
   title: string;
   description: string;
@@ -9,7 +11,7 @@ const { currentLocale } = Astro;
 ---
 
 <!doctype html>
-<html lang={currentLocale}>
+<html lang={currentLocale} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -18,16 +20,156 @@ const { currentLocale } = Astro;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-Darkblue min-w-minApp max-w-maxApp mx-auto">
-    <slot />
+  <body class="min-w-minApp max-w-maxApp mx-auto">
+    <Nav />
+    <main class="pt-[72px]">
+      <slot />
+    </main>
   </body>
 </html>
 <style is:global>
+  :root {
+    --bg: #020420;
+    --bg-body: #020420;
+    --text: white;
+    --text-secondary: rgb(156 163 175);
+    --text-heading: white;
+    --text-purple: rgb(216 180 254);
+    --text-period: rgba(139,92,246,0.7);
+    --card-bg: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.03) 25%, rgba(139,92,246,0.05) 65%, transparent 70%),
+      radial-gradient(ellipse at 25% 40%, rgba(139,92,246,0.10) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(33,41,50,0.5), rgba(24,26,34,0.5));
+    --card-border: 2px solid rgba(139,92,246,0.12);
+    --card-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.25), inset 0 4px 20px rgba(0,0,0,0.12), inset 0 0 30px 15px rgba(139,92,246,0.04), 0 8px 40px rgba(0,0,0,0.25);
+    --nav-bg: rgba(2,4,32,0.7);
+    --nav-border: 1px solid rgba(139,92,246,0.12);
+    --nav-text: rgba(255,255,255,0.7);
+    --nav-text-hover: rgb(216 180 254);
+    --nav-logo: rgb(216 180 254);
+    --line-gradient: linear-gradient(180deg, rgba(139,92,246,0.5), rgba(139,92,246,0.1));
+    --footer-text: #ffffff90;
+    --toggle-border: white;
+    --toggle-border-hover: rgb(216 180 254);
+    --dot-border: rgba(255,255,255,0.3);
+  }
+  html:not(.dark) {
+    --bg: #f1f5f9;
+    --bg-body: #f1f5f9;
+    --text: #0f172a;
+    --text-secondary: #475569;
+    --text-heading: #0f172a;
+    --text-purple: #7c3aed;
+    --text-period: rgba(124,58,237,0.7);
+    --card-bg: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+    --card-border: 2px solid rgba(0,0,0,0.08);
+    --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --nav-bg: rgba(255,255,255,0.8);
+    --nav-border: 1px solid rgba(0,0,0,0.08);
+    --nav-text: #334155;
+    --nav-text-hover: #7c3aed;
+    --nav-logo: #7c3aed;
+    --line-gradient: linear-gradient(180deg, rgba(124,58,237,0.5), rgba(124,58,237,0.1));
+    --footer-text: #64748b;
+    --toggle-border: rgba(0,0,0,0.2);
+    --toggle-border-hover: #7c3aed;
+    --dot-border: rgba(0,0,0,0.15);
+  }
   html {
     font-family: system-ui, sans-serif;
     scroll-behavior: smooth;
     min-width: 760px;
     width: 100%;
-    color: white;
+    color: var(--text);
+  }
+  body {
+    background: var(--bg-body);
+  }
+  nav .nav-inner {
+    background: var(--nav-bg) !important;
+    border-color: var(--nav-border) !important;
+  }
+  nav .nav-inner a,
+  nav .lang-toggle a,
+  nav .sep {
+    color: var(--nav-text) !important;
+  }
+  nav .nav-inner a:hover,
+  nav .lang-toggle a:hover {
+    color: var(--nav-text-hover) !important;
+  }
+  nav .lang-toggle a.active {
+    color: var(--text-heading) !important;
+  }
+  .logo {
+    color: var(--nav-logo);
+  }
+  .card {
+    background: var(--card-bg) !important;
+    border: var(--card-border) !important;
+    box-shadow: var(--card-shadow) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text);
+  }
+  .card .role,
+  .card h1, .card h2, .card h3,
+  .section-title {
+    color: var(--text-heading);
+  }
+  .card .company {
+    color: var(--text-purple);
+  }
+  .card .period {
+    color: var(--text-period);
+  }
+  .card .exp-desc,
+  .card p {
+    color: var(--text-secondary);
+  }
+  .timeline .line {
+    background: var(--line-gradient);
+  }
+  footer {
+    color: var(--footer-text) !important;
+  }
+  #darkmode-toggle {
+    border-color: var(--toggle-border);
+  }
+  #darkmode-toggle:hover {
+    border-color: var(--toggle-border-hover);
+  }
+  .text-purple.text-purple {
+    color: var(--text-purple);
   }
 </style>
+<script>
+  (function() {
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = stored ? stored === "dark" : prefersDark;
+    document.documentElement.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("darkmode-toggle");
+      const sun = document.getElementById("sun-icon");
+      const moon = document.getElementById("moon-icon");
+      if (!btn) return;
+
+      const updateIcons = () => {
+        const dark = document.documentElement.classList.contains("dark");
+        sun?.classList.toggle("hidden", dark);
+        moon?.classList.toggle("hidden", !dark);
+      };
+      updateIcons();
+
+      btn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        const dark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", dark ? "dark" : "light");
+        updateIcons();
+      });
+    });
+  })();
+</script>

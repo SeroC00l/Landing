@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -13,9 +14,9 @@ export default {
       maxWidth: {
         maxApp: "960px",
       },
-	  minWidth: {
-		minApp: "760px",
-	  }
+      minWidth: {
+        minApp: "760px",
+      },
     },
   },
   plugins: [],

@@ -1,4 +1,4 @@
-<button class="flex gap-2 transition-all font-semibold hover:text-purple-300">
+<button id="copy-mail-btn" class="flex gap-2 transition-all font-semibold text-gray-700 dark:text-white hover:text-purple-600 dark:hover:text-purple-300">
   <span class="text-xs md:text-base">aleurrea4@gmail.com</span>
   <svg
     width="24"
@@ -7,23 +7,24 @@
     style="fill: currentColor; cursor: pointer;"
   >
     <path
-      id="copy"
+      class="copy-icon"
       d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z"
       fill="currentColor"></path>
     <path
-      id="copied"
+      class="copied-icon hidden"
       d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"
-      fill="currentColor"
-      class="hidden"></path>
+      fill="currentColor"></path>
   </svg>
 </button>
 
 <script>
+  const btn = document.getElementById("copy-mail-btn");
+
   function handleCopy() {
     const email = "aleurrea4@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
-      const copy = document.querySelector("#copy");
-      const copied = document.querySelector("#copied");
+      const copy = btn.querySelector(".copy-icon");
+      const copied = btn.querySelector(".copied-icon");
       copied.classList.remove("hidden");
       copy.classList.add("hidden");
       setTimeout(() => {
@@ -33,6 +34,5 @@
     });
   }
 
-  const button = document.querySelector("button");
-  button.addEventListener("click", handleCopy);
+  btn.addEventListener("click", handleCopy);
 </script>
