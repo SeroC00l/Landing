@@ -4,10 +4,23 @@ import "@/app.css";
 interface Props {
   title: string;
   description: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
-const { currentLocale } = Astro;
+const { title, description, image } = Astro.props;
+const { currentLocale, url } = Astro;
+const site = new URL(url).origin;
+const path = new URL(url).pathname;
+const canonical = `${site}${path}`;
+const ogImage = image
+  ? `${site}${image.startsWith("/") ? image : "/" + image}`
+  : `${site}/avatar.webp`;
+const localeMap: Record<string, string> = { es: "es_ES", en: "en_US" };
+const ogLocale = localeMap[currentLocale] || "es_ES";
+const siteName = "Alejandro Urrea";
+const twitterHandle = "@alejourrea";
+const languages = { es: "/", en: "/en/" };
+const defaultLang = "es";
 ---
 
 <!doctype html>
@@ -19,6 +32,61 @@ const { currentLocale } = Astro;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- hreflang -->
+    {Object.entries(languages).map(([lang, href]) => (
+      <link rel="alternate" hreflang={lang} href={`${site}${href}`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${site}${languages[defaultLang]}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitterHandle} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alejandro Urrea",
+      "jobTitle": currentLocale === "es" ? "Ingeniero de Software" : "Software Engineer",
+      "url": canonical,
+      "sameAs": [
+        "https://github.com/SeroC00l",
+        "https://www.linkedin.com/in/alejourrea/",
+        "https://www.youtube.com/channel/UChgJX3QD_r-N__Tdg8va5Ug",
+        "https://www.twitch.tv/blackproject33"
+      ],
+      "knowsAbout": [
+        "Web Development", "Full Stack Development", "React", "Astro",
+        "TypeScript", "JavaScript", "Node.js", "AWS", "Python",
+        "Kotlin", "Tailwind CSS", "Supabase", "Next.js"
+      ]
+    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": siteName,
+      "url": site,
+      "inLanguage": ["es", "en"],
+      "description": currentLocale === "es"
+        ? "Portfolio profesional de Alejandro Urrea, Ingeniero de Software"
+        : "Professional portfolio of Alejandro Urrea, Software Engineer"
+    })} />
   </head>
   <body class="min-w-minApp max-w-maxApp mx-auto">
     <Nav />
