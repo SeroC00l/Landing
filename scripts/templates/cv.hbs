@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - {{name}}</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 40px 50px;
+    }
+    h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-size: 11pt;
+      color: #444;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .contact {
+      font-size: 9pt;
+      color: #555;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+    }
+    .contact a {
+      color: #555;
+      text-decoration: none;
+    }
+    .section {
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1.5px solid #ccc;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+    .summary {
+      font-size: 10pt;
+      color: #333;
+      line-height: 1.6;
+    }
+    .exp-item {
+      margin-bottom: 14px;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .exp-role {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #111;
+    }
+    .exp-period {
+      font-size: 9pt;
+      color: #666;
+      white-space: nowrap;
+    }
+    .exp-company {
+      font-size: 9.5pt;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+    .exp-highlights {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+    .exp-highlights li {
+      font-size: 9.5pt;
+      color: #333;
+      margin-bottom: 2px;
+      line-height: 1.45;
+    }
+    .edu-item {
+      margin-bottom: 6px;
+    }
+    .edu-degree {
+      font-weight: 600;
+      font-size: 10pt;
+    }
+    .edu-institution {
+      font-size: 9.5pt;
+      color: #444;
+    }
+    .edu-year {
+      font-size: 9pt;
+      color: #666;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .skill-tag {
+      background: #f0f0f0;
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-size: 9pt;
+      color: #333;
+    }
+    .languages {
+      font-size: 9.5pt;
+      color: #333;
+    }
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .project-item {
+      margin-bottom: 4px;
+    }
+    .project-name {
+      font-weight: 600;
+      font-size: 10pt;
+      color: #111;
+    }
+    .project-desc {
+      font-size: 9.5pt;
+      color: #333;
+      margin-top: 2px;
+    }
+    .project-tech {
+      font-size: 8.5pt;
+      color: #666;
+      margin-top: 2px;
+    }
+    .project-links {
+      font-size: 8.5pt;
+      color: #555;
+      margin-top: 2px;
+    }
+    .project-links a {
+      color: #555;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{name}}</h1>
+    <div class="subtitle">{{title}}</div>
+    <div class="contact">
+      <span>{{location}}</span>
+      <span>{{email}}</span>
+      <a href="https://{{linkedin}}">{{linkedin}}</a>
+      <a href="https://{{github}}">{{github}}</a>
+      {{#if website}}<a href="https://{{website}}">{{website}}</a>{{/if}}
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">{{labels.summary}}</h2>
+    <p class="summary">{{summary}}</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">{{labels.experience}}</h2>
+    {{#each experience}}
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">{{role}}</span>
+        <span class="exp-period">{{period}}</span>
+      </div>
+      <div class="exp-company">{{company}}</div>
+      <ul class="exp-highlights">
+        {{#each highlights}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/each}}
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">{{labels.education}}</h2>
+    <div class="edu-item">
+      <span class="edu-degree">{{education.degree}}</span>
+      <span class="edu-year"> — {{education.year}}</span>
+      <div class="edu-institution">{{education.institution}}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">{{labels.skills}}</h2>
+    <div class="skills-list">
+      {{#each skills}}
+      <span class="skill-tag">{{this}}</span>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">{{labels.projects}}</h2>
+    <div class="projects-list">
+      {{#each projects}}
+      <div class="project-item">
+        <span class="project-name">{{name}}</span>
+        <div class="project-desc">{{description}}</div>
+        <div class="project-tech">{{labels.tech}}: {{#each tech}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</div>
+        {{#if url}}
+        <div class="project-links"><a href="{{url}}">{{url}}</a></div>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">{{labels.languages}}</h2>
+    <div class="languages">
+      {{#each languages}}{{this}}{{#unless @last}} · {{/unless}}{{/each}}
+    </div>
+  </section>
+</body>
+</html>
