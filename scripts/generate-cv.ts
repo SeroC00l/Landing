@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 import Handlebars from "handlebars";
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { cvData } from "../src/data/cv.ts";
@@ -45,7 +45,7 @@ async function generateCV(lang: "es" | "en") {
   });
 
   const page = await browser.newPage();
-  await page.setContent(html, { waitUntil: "networkidle0" });
+  await page.setContent(html, { waitUntil: "load" });
 
   const outputPath = resolve(__dirname, `../public/${lang}_cv.pdf`);
   await page.pdf({
